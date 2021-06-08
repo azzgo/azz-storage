@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "A localstroge handy wrapper",
   "main": "lib/index.js",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/azzgo/azz-storage"
+  },
   "scripts": {
     "build": "tsc",
     "type-check": "tsc --noEmit",
