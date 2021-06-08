@@ -1,0 +1,15 @@
+# sources
+src/
+
+
+# Config file
+jest.config.js
+
+# version control
+.git/
+
+# lock file
+yarn.lock
+
+# Misc
+**/*.DS_Store
