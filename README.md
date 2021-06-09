@@ -64,6 +64,7 @@ const lStore = new AzzStorage([keyPrefix, parser]);
 ```js
 lStore.get([key, defaultVal]);
 lStore.set([key, val]);
+lStore.remove([key]);
 ```
 
 | method | argument   | type    | description                                                     | default   | required |
@@ -72,3 +73,4 @@ lStore.set([key, val]);
 | get    | defaultVal | unknown | when the target value not defined, you will get the default one | undefined | false    |
 | set    | key        | string  | same as get method key                                          | undefined | true     |
 | set    | val        | unknown | the val you want to save                                        | undefined | true     |
+| remove | key        | remove  | remove key mapped value                                         | undefined | true     |
