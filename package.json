@@ -1,6 +1,6 @@
 {
   "name": "azz-storage",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A localstroge handy wrapper",
   "main": "lib/index.js",
   "repository": {
