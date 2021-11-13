@@ -5,7 +5,7 @@ This is a handy wrapper for web localStorage for now
 ## Installation
 
 ```sh
-npm install --save-dev azz-storage
+npm install --save azz-storage
 ```
 
 ## Usage
