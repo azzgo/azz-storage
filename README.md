@@ -11,9 +11,9 @@ npm install --save azz-storage
 ## Usage
 
 ```ts
-import AzzStorage from "azz-storage";
+import { LocalStorage } from "azz-storage";
 
-const lStore = new AzzStorage("__pro");
+const lStore = new LocalStorage("__pro");
 
 lStore.set("token", "logined"); // Will save key as __protoken in localStorage
 
@@ -39,19 +39,19 @@ const vueLSLikeParser: IAzzStorageParser = {
   },
 };
 
-const localVueLikeStore = new AzzStorage("__vuels", vueLSLikeParser);
+const localVueLikeStore = new LocalStorage("__vuels", vueLSLikeParser);
 ```
 
 ## API
 
-### AzzStorage
+### LocalStorage
 
 **Contructor**
 
 ```js
-import AzzStorage from "azz-storage";
+import { LocalStorage }  from "azz-storage";
 
-const lStore = new AzzStorage([keyPrefix, parser]);
+const lStore = new LocalStorage([keyPrefix, parser]);
 ```
 
 | argument  | type              | description                                                                    | default   | required |
@@ -65,6 +65,38 @@ const lStore = new AzzStorage([keyPrefix, parser]);
 lStore.get([key, defaultVal]);
 lStore.set([key, val]);
 lStore.remove([key]);
+```
+
+| method | argument   | type    | description                                                     | default   | required |
+| :----- | ---------- | ------- | --------------------------------------------------------------- | --------- | -------- |
+| get    | key        | string  | the storage key                                                 | undefined | true     |
+| get    | defaultVal | unknown | when the target value not defined, you will get the default one | undefined | false    |
+| set    | key        | string  | same as get method key                                          | undefined | true     |
+| set    | val        | unknown | the val you want to save                                        | undefined | true     |
+| remove | key        | remove  | remove key mapped value                                         | undefined | true     |
+
+
+### SessionStorage
+
+**Contructor**
+
+```js
+import { SessionStorage }  from "azz-storage";
+
+const sStore = new SessionStorage([keyPrefix, parser]);
+```
+
+| argument  | type              | description                                                                    | default   | required |
+| :-------- | :---------------- | :----------------------------------------------------------------------------- | --------- | -------- |
+| keyPrefix | string            | the key prefix for preventing conflict in your web app with other library      | undefined | true     |
+| parser    | IAzzStorageParser | for sepecific use, liking auto JSON parse/stringify like vue-ls or do some log | undefined | false    |
+
+**Instance APi**
+
+```js
+cStore.get([key, defaultVal]);
+cStore.set([key, val]);
+cStore.remove([key]);
 ```
 
 | method | argument   | type    | description                                                     | default   | required |

@@ -1,8 +1,2 @@
-import { AzzStorage, IAzzStorageParser } from "./store";
-
-export default AzzStorage;
-
-export {
-  IAzzStorageParser
-}
+export { Storage, IStorageParser, LocalStorage, SessionStorage } from "./store";
 
