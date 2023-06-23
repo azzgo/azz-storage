@@ -23,8 +23,8 @@ lStore.get("token"); // "logined"
 with parser like vue-ls
 
 ```ts
-const vueLSLikeParser: IAzzStorageParser = {
-  get(val: string, defaultVal: unknown): unknown {
+const vueLSLikeParser: IStorageParser = {
+  getVal(val: string, defaultVal: unknown): unknown {
     try {
       const data = JSON.parse(val);
       return data.value;
@@ -32,7 +32,7 @@ const vueLSLikeParser: IAzzStorageParser = {
       return defaultVal;
     }
   },
-  set(val: unknown) {
+  setVal(val: unknown) {
     return JSON.stringify({
       value: val,
     });
@@ -44,12 +44,13 @@ const localVueLikeStore = new LocalStorage("__vuels", vueLSLikeParser);
 
 ## API
 
-### LocalStorage
+### Storage
 
 **Contructor**
 
 ```js
 import { LocalStorage }  from "azz-storage";
+// SessionStorage same api with LocalStorage
 
 const lStore = new LocalStorage([keyPrefix, parser]);
 ```
@@ -75,34 +76,3 @@ lStore.remove([key]);
 | set    | val        | unknown | the val you want to save                                        | undefined | true     |
 | remove | key        | remove  | remove key mapped value                                         | undefined | true     |
 
-
-### SessionStorage
-
-**Contructor**
-
-```js
-import { SessionStorage }  from "azz-storage";
-
-const sStore = new SessionStorage([keyPrefix, parser]);
-```
-
-| argument  | type              | description                                                                    | default   | required |
-| :-------- | :---------------- | :----------------------------------------------------------------------------- | --------- | -------- |
-| keyPrefix | string            | the key prefix for preventing conflict in your web app with other library      | undefined | true     |
-| parser    | IAzzStorageParser | for sepecific use, liking auto JSON parse/stringify like vue-ls or do some log | undefined | false    |
-
-**Instance APi**
-
-```js
-cStore.get([key, defaultVal]);
-cStore.set([key, val]);
-cStore.remove([key]);
-```
-
-| method | argument   | type    | description                                                     | default   | required |
-| :----- | ---------- | ------- | --------------------------------------------------------------- | --------- | -------- |
-| get    | key        | string  | the storage key                                                 | undefined | true     |
-| get    | defaultVal | unknown | when the target value not defined, you will get the default one | undefined | false    |
-| set    | key        | string  | same as get method key                                          | undefined | true     |
-| set    | val        | unknown | the val you want to save                                        | undefined | true     |
-| remove | key        | remove  | remove key mapped value                                         | undefined | true     |
