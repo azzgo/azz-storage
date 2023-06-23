@@ -1,5 +1,7 @@
 # Azz Storage
 
+[![npm version](https://badge.fury.io/js/azz-storage.svg)](https://badge.fury.io/js/azz-storage)
+
 This is a handy wrapper for web localStorage for now
 
 Support localStorage, sessionStorage, and InMemory Storage
