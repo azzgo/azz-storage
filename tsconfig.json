@@ -5,6 +5,10 @@
     "module": "commonjs",
     "declaration": true,
     "outDir": "./lib",
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
     "sourceRoot": "./src",
     "sourceMap": true,
     "strict": true,

@@ -1,4 +1,5 @@
 import { IStorageParser, Storage } from "./storage";
+import { Memory } from './internal'
 
 export class LocalStorage extends Storage {
   constructor(keyPrefix = "azz", parser?: IStorageParser) {
@@ -8,6 +9,12 @@ export class LocalStorage extends Storage {
 export class SessionStorage extends Storage {
   constructor(keyPrefix = "azz", parser?: IStorageParser) {
     super(keyPrefix, globalThis.sessionStorage, parser);
+  }
+}
+
+export class MemoryStorage extends Storage {
+  constructor(keyPrefix = "azz", parser?: IStorageParser) {
+    super(keyPrefix, new Memory(), parser);
   }
 }
 

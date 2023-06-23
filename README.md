@@ -2,6 +2,8 @@
 
 This is a handy wrapper for web localStorage for now
 
+Support localStorage, sessionStorage, and InMemory Storage
+
 ## Installation
 
 ```sh
@@ -12,6 +14,8 @@ npm install --save azz-storage
 
 ```ts
 import { LocalStorage } from "azz-storage";
+// import { SessionStorage } from "azz-storage";
+// import { MemoryStorage } from "azz-storage";
 
 const lStore = new LocalStorage("__pro");
 
@@ -50,7 +54,7 @@ const localVueLikeStore = new LocalStorage("__vuels", vueLSLikeParser);
 
 ```js
 import { LocalStorage }  from "azz-storage";
-// SessionStorage same api with LocalStorage
+// SessionStorage and MemoryStorage have same api with LocalStorage
 
 const lStore = new LocalStorage([keyPrefix, parser]);
 ```
