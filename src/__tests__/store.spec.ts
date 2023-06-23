@@ -1,4 +1,5 @@
 import { SessionStorage, LocalStorage, IStorageParser } from "../index";
+import  { test, expect } from 'vitest'
 
 test("LocalStorage can normal invode Browser Local Storage", () => {
   const lStore = new LocalStorage("__pro");

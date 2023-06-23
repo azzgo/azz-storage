@@ -2,7 +2,7 @@ export interface IStorageParser {
     get(val: string, defaultVal: unknown): unknown;
     set(val: unknown): string;
 }
-declare type StorageType = "localStorage" | "sessionStorage";
+type StorageType = "localStorage" | "sessionStorage";
 export declare class Storage {
     private keyPrefix;
     private parser?;
