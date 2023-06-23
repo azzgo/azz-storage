@@ -80,5 +80,5 @@ lStore.remove([key]);
 | get    | defaultVal | unknown | when the target value not defined, you will get the default one | undefined | false    |
 | set    | key        | string  | same as get method key                                          | undefined | true     |
 | set    | val        | unknown | the val you want to save                                        | undefined | true     |
-| remove | key        | remove  | remove key mapped value                                         | undefined | true     |
+| remove | key        | string  | remove key mapped value                                         | undefined | true     |
 
